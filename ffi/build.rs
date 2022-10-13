@@ -171,7 +171,6 @@ const RTE_DEPS_LIBS: &[&str] = &["numa", "pcap"];
 fn bind(path: &Path) {
     cc::Build::new()
         .file("src/shim.c")
-        .flag("-march=corei7-avx")
         .compile("rte_shim");
 
     bindgen::Builder::default()
